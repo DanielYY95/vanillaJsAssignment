@@ -11,8 +11,7 @@ function comeonMsg(event) {
   event.preventDefault();
   const myOne = guessInput.value;
   const computerOne = Math.floor(Math.random() * generateInput.value);
-  competeMsg.innerText =
-    "You chose:" + myOne + ", the machine chose:" + computerOne;
+  competeMsg.innerText = `You chose: ${myOne}, the machine chose: ${computerOne}`;
 
   if (parseInt(myOne) === parseInt(computerOne)) {
     resultMsg.innerText = "You win!";

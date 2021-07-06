@@ -34,4 +34,5 @@
 4. .innerText =
    "You chose:" + myOne + ", the machine chose:" + computerOne;
    => 이 때 myOne과 computerOne은 str이다..
-   'ㅁㅁㅁ+\${변수명}...' 은 아직 확신이 안 서네...
+   ## 작은 따옴표, 큰 따옴표가 아니라 백틱`이었네..
+   `You chose: ${myOne}, the machine chose: ${computerOne}`; 성공
