@@ -1,36 +1,37 @@
-# VanilaJSassignment
+## HTML
 
-Created with CodeSandbox
+1. 다중 input
+   form 안에 input을 여러 개 둘 수 있으며, type="submit"인 input이 나오기 전까지의 input들을 submit 가능하다.
 
-if (a === b) {
-resultMsg.innerText = "You won!";
-} else {
-resultMsg.innerText = "You lost!";
-}
-/// 안 먹히는듯.... /// 원래는 크고 같고 작고로 승부하려고했으나 그냥 주어진대로 맞추면 이긴거, 틀리면 진거로 하자...
-/// text 나타내기는 잘 되는 것 같은디....
+2. 값을 입력해야만 작동하기
+   input 태그 안에 required만 작성하면 된다.
 
-JS
-// x는 컴퓨터의 수
-// Math.random()*끝 숫자 0에서 10이면 끝 숫자는 10 ##이는 0~10까지의 실수를
-// Math.random을 정수화하는 방법 (1) round() (2)ceil() ##올림같지만 1.01도 2로 만들어주는.... (3) floor() ## 버림 같지만 1.9999도 1로 만들어주는
-// 여기서 우리가 사용할 random 정수화 방법은 Math.floor(Math.random()*끝숫자) 이다.
+3. label 태그를 통해 글씨와 input을 한번에 품을 수 있다.
 
-// css
-//.twinkle {}
-//#generate-input, guess-input:focus {animation-name: border-focus;}
-//@keyframes border-focus {}
+## CSS
 
-// if 문
-// generate 입력, guess 입력 => 기본동작 멈춰+값을 받는다. => 메시지 설정 => 메시지 보여주기
+1. .hidden을 통해 JS에서 classList.remove 혹은 add 등을 활용
 
-// local Storage 안에 있는 KEY 설정을 잘 이해 못한 것 같다....
+2. input:focus{} input에 포커스되고 있을 때,
+   그림자효과: outline과 box-shadow:a b c d 를 활용
 
-HTML
-// 흠,,, form 한 개에 input 여러 개로 해야하는건가???
-// input 창 클릭했을 때 색깔 효과
-// input 창의 위아래
-// submit event 때 메시지 You chose: "---.value", the machine chose: ""
-// 메시지에 조건(hidden까지)
-// 랜덤 효과
-// localStorage에 저장하는 것
+3. input type="number"를 하면 자동적으로 화살표 위아래 형성. default는 0.
+   ## 화살표 투명도
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+   opacity: 1;
+   }
+
+## JS
+
+1. const를 해야할 것들을 미리 생각하기
+
+2. 변수값들은 오류가 많이 난다.
+   typeof와 console.log(), parseInt() 등을 잘 활용하자.
+
+3. addEventListener()를 쓸 때, if문과 다른 함수들을 같이 쓴다면 차근차근 순서대로..
+
+4. .innerText =
+   "You chose:" + myOne + ", the machine chose:" + computerOne;
+   => 이 때 myOne과 computerOne은 str이다..
+   'ㅁㅁㅁ+\${변수명}...' 은 아직 확신이 안 서네...
