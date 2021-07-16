@@ -5,11 +5,11 @@ const COINLIST="CoinList";
 
 let CoinList=[]; //array 형식으로 저장해야한다. 그리고 이전과 새로운 것들을 유지시키기위해 계속해서 업데이트하는 형식으로
 
-function paintCoin(newCoinObj){
+function paintCoin(newCoin){
   const li = document.createElement("li");
-  li.id=newCoinObj.id;
+  li.id=newCoin.id;
   const span = document.createElement("span");
-  span.innerText = newCoinObj.text; 
+  span.innerText = newCoin.text; 
   const button = document.createElement("button");
   button.innerText="❌"; //이모지: 윈도우 + . 
   button.addEventListener("click", deleteCoin);
@@ -25,7 +25,7 @@ function saveCoin(){
 function deleteCoin(event){
   const li= event.target.parentElement; //target이 대상의 부모
   li.remove();
-  CoinList=CoinList.filter((toDo)=>toDo.id!==parseInt(li.id));
+  CoinList=CoinList.filter((toDo)=>toDo.id !==parseInt(li.id));
   saveCoin();
 }
 
@@ -42,9 +42,6 @@ function coinInvest(event){
   saveCoin(); // array 자체로 계속 저장해주는 것이다. 
 } // 이 함수는 계속해서 제출할 때마다 값을 저장하고 화면에 보여주는 것까지!! 
 
-function CoinFilter(){
-  return true;
-}
 
 
 investCoinForm.addEventListener("submit", coinInvest);
