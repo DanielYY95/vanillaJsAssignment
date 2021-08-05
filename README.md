@@ -16,7 +16,7 @@
    그림자효과: outline과 box-shadow:a b c d 를 활용
 
 3. input type="number"를 하면 자동적으로 화살표 위아래 형성. default는 0.
-   ## 화살표 투명도
+   ## 화살표 투명도(숫자 위아래 1씩 증감하는거 없애기)
    input::-webkit-outer-spin-button,
    input::-webkit-inner-spin-button {
    opacity: 1;
