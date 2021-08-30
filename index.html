@@ -9,8 +9,8 @@
     <h1 id="gameTitle">Random Number Game</hi>
     <form id="guess-form">
       <label id="generateLabel">Generate a number between 0 and 
-        <input id="generate-input" type="number" required/></label> 
-      <label id="guessLabel">Guess the number: <input id="guess-input" type="number" style="height:20px" required/>
+        <input id="generate-input" type="number" min=0 required/></label> 
+      <label id="guessLabel">Guess the number: <input id="guess-input" type="number" min=0 style="height:20px" required/>
         <input type="submit" style="margin-left:5px; width:45px;" value="Play!"></label>
       
     </form>
@@ -21,4 +21,3 @@
     <script src="src/index.js"></script>
   </body>
 </html>
-
