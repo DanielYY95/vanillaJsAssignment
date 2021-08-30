@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./style.css";
 
 const competeMsg = document.querySelector("#msg1");
 const resultMsg = document.querySelector("#msg2");
@@ -10,8 +10,8 @@ const Hidden_ClassName = "hidden";
 function comeonMsg(event) {
   event.preventDefault();
   const myOne = guessInput.value;
-  const computerOne = Math.floor(Math.random() * generateInput.value);
-  competeMsg.innerText = `You chose: ${myOne}, the machine chose: ${computerOne}`;
+  const computerOne = Math.floor(Math.random() * generateInput.value + 1);
+  competeMsg.innerText = `You chose: ${myOne}, the machine chose: ${computerOne}.`;
 
   if (parseInt(myOne) === parseInt(computerOne)) {
     resultMsg.innerText = "You win!";
