@@ -1,6 +1,7 @@
 body{
   width: 1600px;
   height: 2000px;
+  text-align: center;
 }
 
 h1{
@@ -10,6 +11,18 @@ h1{
   margin: 0 auto;
   font-size: 2.4em;
   text-align: center;
+}
+
+#nameform, #greet, #Now_Weather{
+  text-align: center;
+  font-size:1.5em;
+  color:black;
+  font-weight: bold;
+
+}
+
+#Now_Weather{
+  margin-bottom: 50px;
 }
 
 .hidden{
@@ -38,15 +51,6 @@ h1{
 } 
 // 글자 테두리!!!
 
-#nameform{
-  width: 600px;
-  height: 70px;
-  margin: 0 auto;
-  background-color: beige;
-  color:black;
-  font-size: 30px;
-}
-
 #nameform>label{
   text-align: center;
 }
@@ -56,11 +60,15 @@ h1{
   padding-left: 5px;
   }
 
+#NAME{
+  display: inline;
+}
+
 .coinButton{
   width: 180px;
   height: 30px;
   font-size: 1.2em;
-  margin: 30px 800px;
+  margin: 30px 700px;
 }
 
 #coinInput{
@@ -68,12 +76,12 @@ h1{
   width: 180px;
   height: 30px;
   font-size: 1.3em;
-  margin: 30px 300px;
+  margin: 30px;
 }
 
 #coinInputForm{
-  width: 600px;
+  width: 300px;
   min-height: 60px; /// 계속 늘어날 수 있다. 
-  padding: 0px 400px;
   background-color:linen;
+  
 }
