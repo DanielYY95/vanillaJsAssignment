@@ -9,7 +9,7 @@ function paintCoin(newCoin){
   const li = document.createElement("li");
   li.id=newCoin.id;
   const span = document.createElement("span");
-  span.innerText = newCoin.text; 
+  span.innerText = newCoin.text+"          "; 
   const button = document.createElement("button");
   button.innerText="❌"; //이모지: 윈도우 + . 
   button.addEventListener("click", deleteCoin);
@@ -29,6 +29,7 @@ function deleteCoin(event){
   saveCoin();
 }
 
+
 function coinInvest(event){
   event.preventDefault();
   const newCoin={
@@ -40,6 +41,8 @@ function coinInvest(event){
   saveCoin(); // array 자체로 계속 저장해주는 것이다. 
 } // 이 함수는 계속해서 제출할 때마다 값을 저장하고 화면에 보여주는 것까지!! 
 
+
+
 investCoinForm.addEventListener("submit", coinInvest);
 
 const savedCoin=localStorage.getItem(COINLIST);
@@ -49,6 +52,3 @@ if (savedCoin !==null){ //저장은 되지만 계속 화면에 나오게끔//
 	CList=parsedCoin; //인덱스 부여된 이전 것들을 계속해서 CoinList에 업데이트하고,,, 이 변수가 쓰일 때 미리 준비가 되는 것//
 	parsedCoin.forEach(paintCoin);
 }
-
-/// button 2개가 submit을 공통적으로 반영하고 있다보니 계속 입력하려고해도 삭제가 이루어졌던 것.
-/// HTML에서 ul 을 form 안에 두었고,,,, 그 form을 div로 묶지 않았다...
