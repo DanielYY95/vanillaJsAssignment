@@ -24,6 +24,5 @@ function onGeoError(){
 navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 
 
-/// 아예 html에서 span id 부여
-/// null 값 같은 오류가 뜬다면, console.log로 천천히...
-/// html에서 문제가 생긴 걸 수도 있다. 
+
+
