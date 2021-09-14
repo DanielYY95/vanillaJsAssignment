@@ -15,6 +15,3 @@ function ChangeBackground(event){
 
 CoinButton.addEventListener("click", ChangeBackground);
 
-// onclick으로 addEventListener 대신 할 수 있지만 하나의 이벤트만 처리 가능//
-// 기본 사진이랑 바꿀 때 사진의 경로 신경쓸 것!!
-// 인터넷 url을 활용하는 것이 좋겠다...
