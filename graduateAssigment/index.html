@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Watch out. Don't ever think about coin. 돔황챠</h1>
+    <h2 id="clock">00:00:00</h2>
+    
+    <div id="Now_Weather">
+      <span id="city"></span>
+      <span id="temp"></span>
+      <span id="weather"></span>
+    </div>  
+    
+    <div id="NAME">
+      <form id="nameform" style= "background-color:beige;">
+          <label>What's your name? You little coin kid.<input required id="name" type="text" /></label>
+      </form>
+      <h3 id="greet" style= "background-color:lightblue;"></h3>
+      <button class="coinButton" >ChangeYourCoin</button>
+      
+    </div>
+
+
+
+    <div id="coinInputForm" style="margin-left: 650px; background-color: gray;">  
+      <form id="coinForm">
+      <input id="coinInput" type="text" placeholder="which coin?" maxlength="15" required/>
+      </form>
+      <ul id="list"></ul>
+    </div>
+
+
+    <script src="Background.js"></script>
+    <script src="Clock.js"></script>
+    <script src="Username.js"></script>
+    <script src="ToInvest.js"></script>
+    <script src="Weather.js"></script>
+  </body>
+</html>
