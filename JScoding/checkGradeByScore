@@ -1,0 +1,80 @@
+//1. 초기 세팅
+const userId = "hello";
+const userPwd = "world";
+const dataSet = { 홍길동: 90, 홍길순: 88, 김철수: 60, 정보미: 100, 박민식: 90 };
+
+function checkPwd(){
+    do{
+        const InputPwd = prompt("패스워드를 입력해주세요.");
+        let isValidPwd = (InputPwd == "world");
+        if (isValidPwd){
+            count = 0;
+            break;
+        }
+        else{
+            alert("비밀번호가 유효하지 않습니다. "+ (2-count)+ "번 기회 남았습니다.");
+            count++;
+        }}while(count<3);
+    }
+
+function checkGrade(){
+    // 3. 성적결산여부 확인 - confirm
+    const check = confirm("성적 결산 여부를 확인하시겠습니까?");
+
+    if (check){
+        checking();
+    }else{
+        alert("잘 가요~");
+    }
+
+    function checking(){
+        // 4. 확인하고 싶은 사람을 말씀해주세요.
+        let Name = prompt("확인하고 싶은 사람을 말씀해주세요. (홍길동, 홍길순, 김철수, 정보미, 박민식)");
+
+        // 5. 등급부여
+        let score = dataSet[Name];
+        let grade;
+
+        if (score>=90){
+            grade = 'A';
+        } else if (score>=80){
+            grade = 'B';
+        } else if (score>=70){
+            grade = 'C';
+        } else if (score>=60){
+            grade = 'D';
+        } else{
+            grade = 'F';
+        }
+        alert(grade);
+    };
+
+}
+
+// 로그인 정보를 물어봅니다.
+// 처음에 count는 0으로 시작
+let count = 0; 
+
+// do while문으로 id 를 물어본다.
+do{
+    const InputId = prompt("아이디를 입력해주세요.");
+    let isValidId = (InputId == "hello"); // id 맞는지 boolean
+    if (isValidId){ 
+        count = 0; // id  맞으면 다시 0으로 시작
+        checkPwd(); // 패스워드도 동일한 과정 반복
+        if(count !=3){ // 패스워드 3번 틀리지않을 때만 작동
+            checkGrade(); // 성적 체크
+        }
+        break; //다 하고나면 반복문 탈출~
+    }
+    else{
+        alert("아이디가 유효하지 않습니다. " + (2-count)+ "번 기회 남았습니다.");
+        count++;
+    }}while(count<3);
+
+// 아이디나 비밀번호 실패할 경우
+// do while문에서 3번 실패 시, count가 결국 3이 되버리기 때문에
+if(count==3){
+    alert("새로고침 후 시도해주세요");
+    count= 0; // 이걸 하지않으면 새로고침 후 시도시 문제가 생길 수 있다.
+}
