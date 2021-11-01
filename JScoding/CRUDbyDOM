@@ -1,0 +1,60 @@
+// 0. Dom을 이용해서 각 버튼들을 조작
+const Create = document.querySelector("button:first-of-type");
+
+const ul = document.querySelector("ul");
+
+// 1. 추가하기버튼 누르면 prompt 받고 이걸로 ul 태그 내부에 li 추가(같은 형식으로)
+
+Create.addEventListener("click", CreateLi);
+
+function CreateLi(){
+    const nameOfLi = prompt("이름을 적어주세요.");
+    const Li = document.createElement("li");
+    Li.innerHTML = `<div class="content">${nameOfLi}</div>
+                        <div class="buttons">
+                        <button class="update">수정</button>
+                        <button class="delete">삭제</button></div>`;
+    
+    ul.appendChild(Li);
+
+}
+
+// 2. 삭제하기 버튼 누르면  li 자체를 삭제
+
+ul.addEventListener("click", eventController); // 포함하고 있는 것을 클릭해도 된다~!
+
+function eventController(event) {
+  const type = event.target.className; // js 요소 클래스 가져오기 구글링
+// event target의 className
+
+// 전체를 포함하고있는 것을 클릭할 때, 해당 target.type이 뭔지에 따라 조건문 부여
+  if (type === "update") {
+    // 업데이트 로직
+    updateLi(event.target);
+  } else if (type === "delete") {
+    // 삭제 로직
+    deleteLi(event.target);
+  } else {
+      alert("깜짝!"); // 버튼이 아닌 li의 공간을 눌렀을 때! 설정 안 하면 그냥 안하는 것이다.
+  }
+}
+
+function deleteLi(target) {
+  ul.removeChild(target.closest("li"));
+} //target은 그냥 매개변수를 위한 변수일뿐이다. 
+
+
+// 3. 수정하기 버튼 누르면 prompt 받고 .content 내부 텍스트로 업데이트
+
+function updateLi(target) {
+    const content = prompt("내용을 입력해주세요.");
+    target.parentElement.previousElementSibling.innerText = content;
+}
+  }
+
+
+// 4. 새로고침했을 때의 문제??
+// localStorage에 저장되지않았기 때문이지! 
+// RAM에 저장하듯, 이런 메모리 같은 건 종료되거나 reset되면 날라간다.
+// 그래서 이것이 없어지지않게하기위해 서버단, DB 를 이용
+// but 아직은 그런 단계가 아니기에, local 단에서! localStorage 활용(물론, 세션, 쿠키도 있으나
